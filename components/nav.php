@@ -14,6 +14,13 @@
         <li class="nav-item <?php echo $first_part === 'lista.php' ? 'active' : ''; ?>">
             <a class="nav-link" href="lista.php">Peliculas</a>
         </li>
+        <?php
+            if($_SESSION["role"] === 'admin') {
+                echo '<li class="nav-item">
+                <a class="nav-link" href="agregar.php">Agregar</a>
+            </li>';
+            }
+        ?>
         <li class="nav-item <?php echo $first_part === 'logout.php' ? 'active' : ''; ?>">
             <a class="nav-link" href="logout.php">Logout</a>
         </li>

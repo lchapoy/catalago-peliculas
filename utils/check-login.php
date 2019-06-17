@@ -39,16 +39,17 @@
                 // Recorre linea por linea el archivo creado arreglo por linea separado por ",".
                 $result = fgetcsv($myfile, 600, ",");
                 // Guarda el usuario y la contraseña en arreglo de credenciales
-                $credentials[$result[0]] = $result[1];
+                $credentials[$result[0]] = array($result[1], $result[2]);
             }
             // Verifica si la contraseña proporcionada es la misma que la otorgada por el usuario
-            if ($credentials[$username] === sha1($password)) {
+            if ($credentials[$username][0] === sha1($password)) {
                 // Inicia la Sesion
                 session_start();        
                 // Guarda valores de referencia para la sesion.
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $id;
-                $_SESSION["username"] = $username;                            
+                $_SESSION["username"] = $username; 
+                $_SESSION["role"] = $credentials[$username][1];                            
                 
                 // Redirecciona el usuario a la pagina principal
                 header("location: dashboard.php");
