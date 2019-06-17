@@ -5,7 +5,7 @@
     $first_part = end($components);
 ?>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <img src="/ejercicio1/images/popcorn.png" width="30" height="30" >
+    <img src="/catapeli/images/popcorn.png" width="30" height="30" >
     <a class="navbar-brand title" href="#">CataPeli</a>
     <ul class="navbar-nav">
         <li class="nav-item <?php echo $first_part === 'dashboard.php' ? 'active' : ''; ?>">

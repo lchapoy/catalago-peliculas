@@ -1,10 +1,16 @@
 <?php
-    define('__ROOT__', dirname(dirname(__FILE__)));
-    require_once(__ROOT__.'/ejercicio1/utils/check-login.php');
+    define('__ROOT__', dirname(__FILE__));
+    require_once(__ROOT__.'/utils/check-login.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="XAMPP is an easy to install Apache distribution containing MariaDB, PHP and Perl." />
+    <meta name="keywords" content="xampp, apache, php, perl, mariadb, open source distribution" />
+
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -48,8 +54,8 @@
 </head>
 <body>
     <div class="wrapper">
-        <img src="/ejercicio1/images/popcorn.png" width="120" height="120" class="logor">
-        <h2 class="title"> Catapeli </h2>
+        <img src="/catapeli/images/popcorn.png" width="120" height="120" class="logor">
+        <h2 class="title"> CataPeli </h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Usuario</label>
