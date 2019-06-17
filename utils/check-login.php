@@ -42,7 +42,7 @@
                 $credentials[$result[0]] = $result[1];
             }
             // Verifica si la contraseña proporcionada es la misma que la otorgada por el usuario
-            if ($credentials[$username] === $password) {
+            if ($credentials[$username] === sha1($password)) {
                 // Inicia la Sesion
                 session_start();        
                 // Guarda valores de referencia para la sesion.
