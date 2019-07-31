@@ -2,9 +2,6 @@
     define('__ROOT__', dirname(__FILE__));
     $session = require_once(__ROOT__.'/controllers/session.php');
     $session->verifyLogin();
-    if (isset($_POST['login'])) {
-        $session->login();
-    }
 
 ?>
 <!DOCTYPE html>

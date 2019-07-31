@@ -71,5 +71,9 @@
             }
         }
     }
-    return new Session()
+    $session = new Session();
+    if (isset($_POST['login'])) {
+        $session->login();
+    }
+    return $session
 ?>
