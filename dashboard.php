@@ -1,6 +1,7 @@
 <?php
     define('__ROOT__', dirname(__FILE__));
-    require_once(__ROOT__.'/utils/check-session.php');
+    $session = require_once(__ROOT__.'/controllers/session.php');
+    $session->verifySession();
 ?>
 <!DOCTYPE html>
 <html lang="en">
