@@ -14,6 +14,7 @@
 
         public function renderMovie() {
             $movies = '';
+            $formAction = htmlspecialchars($_SERVER['PHP_SELF']).'?'.http_build_query($_GET);
             for ($i = 1; $i < sizeof($this->model->movies); $i++) {
                 $movie = $this->model->movies[$i];
                 $movies = $movies.<<<MovieTag
@@ -25,6 +26,12 @@
                             <div class="row">
                                 <a href="./informacion.php?id={$movie[5]}" class="btn btn-primary"><i class='fas fa-eye'></i></a>
                                 <a href="./agregar.php?id={$movie[5]}" class="btn btn-primary"><i class='fas fa-edit'></i></a>
+                                <form action='$formAction' method='post'>
+                                    <button type='submit' class='btn btn-danger' name='deleteMovie' value='{$movie[5]}'>
+                                        <i class='fas fa-trash'></i>
+                                    </button>
+                                </form>
+                                
                             </div>
                         </div>
                     </div>

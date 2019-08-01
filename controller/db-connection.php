@@ -36,6 +36,12 @@
             return $result->fetch_array();
         }
 
+        public function deleteMovie($movieId){
+            $sql = "DELETE FROM movies WHERE id = '$movieId'";
+            $result = $this->conn->query($sql);
+            return $result;
+        }
+
         public function agregarPelicula($title, $overview, $subtitle, $rating){
             $mytitle = mysqli_real_escape_string($this->conn, $title);
             $myoverview  = mysqli_real_escape_string($this->conn, $overview);

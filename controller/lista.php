@@ -18,5 +18,10 @@
             return $result;
         }
 
+        public function deleteMovie($deleteMovieId) {
+            $result = $this->db->deleteMovie($deleteMovieId);
+            return $result;
+        }
+
     }
 ?>

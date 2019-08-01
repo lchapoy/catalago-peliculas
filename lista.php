@@ -5,6 +5,9 @@
     $model = new ListaModel();
     $controller = new ListaController($model);
     $view = new ListaView($controller, $model);
+    if (isset($_POST['deleteMovie'])) {
+        $controller->deleteMovie($_POST['deleteMovie']);
+    }
     $controller->getMovies();
 ?>
 <!DOCTYPE html>
