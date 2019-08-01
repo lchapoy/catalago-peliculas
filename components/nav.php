@@ -20,7 +20,7 @@
         }
     }
 ?>
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<nav class="navbar navbar-expand navbar-dark bg-dark" style="position: sticky; z-index: 10; top: 0">
     <img src="/catapeli/images/popcorn.png" width="30" height="30" >
     <a class="navbar-brand title" href="#">CataPeli</a>
     <ul class="navbar-nav">

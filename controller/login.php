@@ -37,7 +37,7 @@
                 }
 
                 // Valida las credenciales
-                if (empty($this->username_err) && empty($this->password_err)) {
+                if (empty($this->model->username_err) && empty($this->model->password_err)) {
                     $user = $this->db->validateCredentials($this->model->username, sha1($this->model->password));
                     if (!empty($user)) {
                         // Guarda valores de referencia para la sesion.

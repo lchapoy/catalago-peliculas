@@ -8,7 +8,6 @@
     if (isset($_POST['login'])) {
         $controller->login();
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

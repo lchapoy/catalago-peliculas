@@ -22,7 +22,10 @@
                         <div class="card-body">
                             <h5 class="card-title">{$movie[8]}</h5>
                             <p class="card-text">{$movie[19]}</p>
-                            <a href="./informacion.php?id={$movie[5]}" class="btn btn-primary">Ver mas informacion</a>
+                            <div class="row">
+                                <a href="./informacion.php?id={$movie[5]}" class="btn btn-primary"><i class='fas fa-eye'></i></a>
+                                <a href="./agregar.php?id={$movie[5]}" class="btn btn-primary"><i class='fas fa-edit'></i></a>
+                            </div>
                         </div>
                     </div>
                 MovieTag;

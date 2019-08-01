@@ -18,6 +18,7 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a35779a5fa.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <style type="text/css">
         body{ font: 14px sans-serif; }
@@ -33,6 +34,11 @@
         }
         .movie{
             flex: 1 1 200px;
+        }
+
+        .row{
+            display: flex;
+            justify-content: space-around;
         }
     </style>
     
