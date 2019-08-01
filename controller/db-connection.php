@@ -26,6 +26,20 @@
 
 
         }
+
+        public function getMovies(){
+            $sql = "SELECT * TOP 10 FROM movies";
+            $result = mysqli_query($this->db,$sql);
+            if(is_null($result)) {
+                return $result;
+            } else {
+                $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+                return $row;
+            }
+            //;
+
+
+        }
     }
     return new DBConnection();
 ?>

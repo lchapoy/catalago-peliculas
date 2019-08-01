@@ -1,7 +1,14 @@
 <?php
     define('__ROOT__', dirname(__FILE__));
-    $session = require_once(__ROOT__.'/controllers/session.php');
-    $session->verifyLogin();
+    require_once(__ROOT__.'/controller/login.php');
+    require_once(__ROOT__.'/view/login.php');
+    require_once(__ROOT__.'/model/login.php');
+    $model = new LoginModel();
+    $controller = new LoginController($model);
+    $view = new LoginView($controller, $model);
+    if (isset($_POST['login'])) {
+        $controller->login();
+    }
 
 ?>
 <!DOCTYPE html>
@@ -55,34 +62,8 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <img src="/catapeli/images/popcorn.png" width="120" height="120" class="logor">
-        <h2 class="title"> CataPeli </h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($session->username_err)) ? 'has-error' : ''; ?>">
-                <label>Usuario</label>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-user"></i></div>
-                    </div>
-                    <input type="text" name="username" class="form-control" value="<?php echo $session->username; ?>" aria-describedby="usernameHelpBlock">
-                </div>
-                <span id="usernameHelpBlock" class="help-block text-muted"><?php echo $session->username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($session->password_err)) ? 'has-error' : ''; ?>">
-                <label>Contraseña</label>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-key"></i></div>
-                    </div>
-                    <input type="password" name="password" class="form-control" aria-describedby="passwordHelpBlock">
-                </div>
-                <span id="passwordHelpBlock" class="help-block text-muted" ><?php echo $session->password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Iniciar Sesion" name="login">
-            </div>
-        </form>
-    </div>    
+<?php
+    echo $view->render();
+?>
 </body>
 </html>

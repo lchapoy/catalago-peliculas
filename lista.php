@@ -1,6 +1,10 @@
 <?php
     define('__ROOT__', dirname(__FILE__));
-    require_once(__ROOT__.'/utils/check-session.php');
+    $session = require_once(__ROOT__.'/controllers/session.php');
+    $session->verifySession();
+    $database = require(__ROOT__.'/controllers/db-connection.php');
+    //$database->getMovies();
+    echo $database;
 ?>
 <!DOCTYPE html>
 <html lang="en">
