@@ -33,29 +33,29 @@
             for ($i = 1; $i < sizeof($this->model->movies); $i++) {
                 $movie = $this->model->movies[$i];
                 $adminActions = $this->deleteEditActions($movie[5], $formAction);
-                $movies = $movies.<<<MovieTag
-                    <div class="card movie" style="width: 18rem;">
-                        <img src="{$this->getMoviePath($movie)}" class="card-img-top medium">
-                        <div class="card-body">
-                            <h5 class="card-title">{$movie[8]}</h5>
-                            <p class="card-text">{$movie[19]}</p>
-                            <div class="row">
-                                <a href="./informacion.php?id={$movie[5]}" class="btn btn-primary"><i class='fas fa-eye'></i></a>
+                $movies = $movies."
+                    <div class='card movie' style='width: 18rem;'>
+                        <img src='{$this->getMoviePath($movie)}' class='card-img-top medium'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$movie[8]}</h5>
+                            <p class='card-text'>{$movie[19]}</p>
+                            <div class='row'>
+                                <a href='./informacion.php?id={$movie[5]}' class='btn btn-primary'><i class='fas fa-eye'></i></a>
                                 $adminActions    
                             </div>
                         </div>
                     </div>
-                MovieTag;
+                ";
             }
             return $movies;
         }
 
        public function render(){
-          echo <<<ListaTAG
-             <section class="wrapper">
+          echo "
+             <section class='wrapper'>
                  {$this->renderMovie()}
              </section>
-         ListaTAG;
+         ";
        }
     }
 ?>

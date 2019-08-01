@@ -67,7 +67,6 @@
         }
 
        public function render(){
-
           $formAction = htmlspecialchars($_SERVER['PHP_SELF']).'?'.http_build_query($_GET);
           $titleInput = $this->renderInput('text','title', 'please enter title', 'heading');
           $overviewInput = $this->renderTextArea('overview', 'please enter overview', 'align-justify');

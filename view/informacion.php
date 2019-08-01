@@ -15,26 +15,26 @@
         public function renderMovie() {
 
             $movie = $this->model->movie;
-            return <<<MovieTag
-                <div class="card movie" style="width: 18rem;">
-                    <img src="{$this->getMoviePath($movie)}" class="card-img-top medium">
-                    <div class="card-body">
-                        <h5 class="card-title">{$movie[8]}</h5>
-                        <p class="card-text">{$movie[19]}</p>
-                        <p class="card-text">{$movie[9]}</p>
-                        <p class="card-text">Rating: {$movie[22]}</p>
-                        <a href="./lista.php" class="btn btn-primary">Regresar</a>
+            return "
+                <div class='card movie' style='width: 18rem;'>
+                    <img src='{$this->getMoviePath($movie)}' class='card-img-top medium'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{$movie[8]}</h5>
+                        <p class='card-text'>{$movie[19]}</p>
+                        <p class='card-text'>{$movie[9]}</p>
+                        <p class='card-text'>Rating: {$movie[22]}</p>
+                        <a href='./lista.php' class='btn btn-primary'>Regresar</a>
                     </div>
                 </div>
-            MovieTag;
+            ";
         }
 
        public function render(){
-          echo <<<PeliculaTAG
-             <section class="wrapper">
+          echo "
+             <section class='wrapper'>
                  {$this->renderMovie()}
              </section>
-         PeliculaTAG;
+         ";
        }
     }
 ?>
