@@ -32,6 +32,12 @@
             $result = $this->conn->query($sql);
             return $result->fetch_all();
         }
+
+        public function getMovie($movieId){
+            $sql = "SELECT * FROM movies WHERE id = '$movieId'";
+            $result = $this->conn->query($sql);
+            return $result->fetch_array();
+        }
     }
     return new DBConnection();
 ?>

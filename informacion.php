@@ -1,11 +1,11 @@
 <?php
-    require_once('./controller/lista.php');
-    require_once('./view/lista.php');
-    require_once('./model/lista.php');
-    $model = new ListaModel();
-    $controller = new ListaController($model);
-    $view = new ListaView($controller, $model);
-    $controller->getMovies();
+    require_once('./controller/informacion.php');
+    require_once('./view/informacion.php');
+    require_once('./model/informacion.php');
+    $model = new InformacionModel();
+    $controller = new InformacionController($model);
+    $view = new InformacionView($controller, $model);
+    $controller->getMovie($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +23,11 @@
         body{ font: 14px sans-serif; }
         .wrapper{
             padding: 20px;
-            flex-direction: 'row';
+            flex-direction: row;
             display: flex;
-            flex-wrap: wrap
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
          }
         .title{
             text-align: center;
@@ -33,6 +35,7 @@
         }
         .movie{
             flex: 1 1 200px;
+            max-width: 500px;
         }
     </style>
     
