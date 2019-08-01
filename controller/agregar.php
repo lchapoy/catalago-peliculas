@@ -6,7 +6,11 @@
             $this->model = $model;
             $this->db = require_once('./controller/db-connection.php');
             // Verifica si el usuario esta logeado.
-            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false){
+            if(
+                !isset($_SESSION["loggedin"])
+                || $_SESSION["loggedin"] === false
+                || $_SESSION["role"] !== 'admin'
+            ){
                header("location: index.php");
                exit;
             }
