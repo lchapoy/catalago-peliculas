@@ -2,9 +2,9 @@
     class DBConnection {
         function __construct() {
             define('DB_SERVER', 'localhost');
-            define('DB_USERNAME', 'root');
-            define('DB_PASSWORD', NULL);
-            define('DB_DATABASE', 'movies');
+            define('DB_USERNAME', 'thechapo_admin');
+            define('DB_PASSWORD', '&SbVLiuoJ*jo');
+            define('DB_DATABASE', 'thechapo_users');
             $this->conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
         }
 
