@@ -1,10 +1,19 @@
 <?php
-    define('__ROOT__', dirname(__FILE__));
-    $session = require_once(__ROOT__.'/controllers/session.php');
-    $session->verifySession();
-    $database = require(__ROOT__.'/controllers/db-connection.php');
-    //$database->getMovies();
-    echo $database;
+    function console_log($output, $with_script_tags = true) {
+        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+    ');';
+        if ($with_script_tags) {
+            $js_code = '<script>' . $js_code . '</script>';
+        }
+        echo $js_code;
+    }
+    require_once('./controller/lista.php');
+    require_once('./view/lista.php');
+    require_once('./model/lista.php');
+    $model = new ListaModel();
+    $controller = new ListaController($model);
+    $view = new ListaView($controller, $model);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,27 +29,28 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <style type="text/css">
         body{ font: 14px sans-serif; }
-        .wrapper{ padding: 20px; }
+        .wrapper{
+            padding: 20px;
+            flex-direction: 'row';
+            display: flex;
+            flex-wrap: wrap
+         }
         .title{
             text-align: center;
             font-family: 'Permanent Marker', cursive;
+        }
+        .movie{
+            flex: 1 1 25%;
         }
     </style>
     
 </head>
 <body>
+    <?php console_log($controller->getMovies()); ?>
     <?php
-        require_once(__ROOT__.'/components/nav.php');
+        require_once('./components/nav.php');
+        $view->render();
     ?>
-    <section class="wrapper">
-        <div class="card" style="width: 18rem;">
-            <img src="/catapeli/images/no-movie.jpg" class="card-img-top medium">
-            <div class="card-body">
-                <h5 class="card-title">Pelicula 1</h5>
-                <p class="card-text">Descripcion Pelicula 1</p>
-                <a href="#" class="btn btn-primary">Ver mas informacion</a>
-            </div>
-        </div>
-    </section>
+
 </body>
 </html>

@@ -1,7 +1,10 @@
 <?php
-    define('__ROOT__', dirname(__FILE__));
-    $session = require_once(__ROOT__.'/controllers/session.php');
-    $session->verifySession();
+    require_once('./controller/dashboard.php');
+    require_once('./view/dashboard.php');
+    require_once('./model/dashboard.php');
+    $model = new DashboardModel();
+    $controller = new DashboardController($model);
+    $view = new DashboardView($controller, $model);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,12 +29,9 @@
 </head>
 <body>
     <?php
-        require_once(__ROOT__.'/components/nav.php');
+        require_once('./components/nav.php');
+        $view->render()
     ?>
-    <div class="jumbotron">
-        <h1 class="display-4">Peliculas!</h1>
-        <p class="lead">En esta pagina podras encontrar un catalago de las peliculas mas recientes</p>
-        <a class="btn btn-primary btn-lg" href="lista.php" role="button">Lista de Peliculas</a>
-    </div>
+
 </body>
 </html>

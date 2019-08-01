@@ -1,5 +1,5 @@
 <?php
-    $router = require_once(__ROOT__.'/controller/nav.php');
+    $router = require_once('./controller/nav.php');
 
     //Genera las rutas en la barra de navegacion dinamicamente.
     function renderRoutes($router){

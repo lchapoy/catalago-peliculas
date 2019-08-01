@@ -18,7 +18,7 @@
           $formAction = htmlspecialchars($_SERVER['PHP_SELF']);
           $userError = $this->getErrorClass($this->model->username_err);
           $passwordError = $this->getErrorClass($this->model->password_err);
-          return <<<LoginTAG
+          echo <<<LoginTAG
              <div class='wrapper'>
                  <img src='/catapeli/images/popcorn.png' width='120' height='120' class='logor'>
                  <h2 class='title'> CataPeli </h2>

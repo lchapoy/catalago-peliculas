@@ -1,8 +1,7 @@
 <?php
-    define('__ROOT__', dirname(__FILE__));
-    require_once(__ROOT__.'/controller/login.php');
-    require_once(__ROOT__.'/view/login.php');
-    require_once(__ROOT__.'/model/login.php');
+    require_once('./controller/login.php');
+    require_once('./view/login.php');
+    require_once('./model/login.php');
     $model = new LoginModel();
     $controller = new LoginController($model);
     $view = new LoginView($controller, $model);
@@ -63,7 +62,7 @@
 </head>
 <body>
 <?php
-    echo $view->render();
+   $view->render();
 ?>
 </body>
 </html>
